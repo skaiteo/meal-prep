@@ -1,8 +1,7 @@
 <template>
     <v-app>
         <app-navigation></app-navigation>
-
-        <v-content transition="slide-x-transition">
+        <v-content>
             <router-view></router-view>
         </v-content>
     </v-app>
@@ -20,6 +19,29 @@ export default {
 };
 </script>
 
-<style>
-
+<style scoped>
+.fade-enter-active{
+  animation: fadeIn 20s ease-in;
+}
+@keyframes fadeIn{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+.fade-leave-active{
+  animation: popOut 20s ease-in;
+}
+@keyframes popOut{
+  0%{
+    opacity: 1;
+    transform: translateX(-100px);
+  }
+  100%{
+    opacity: 0;
+    transform: translateX(100px);
+  }
+}
 </style>
