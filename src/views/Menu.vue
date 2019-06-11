@@ -4,11 +4,11 @@
             <h1>Menu Page</h1>
         </v-layout>
     </v-container> -->
-    <span>
+    <v-flex fill-height>
         <home-plans></home-plans>
         <meal-recipes v-if="this.$store.state.recipes.length"></meal-recipes>
         <meal-recipes-loading v-else-if="this.$store.state.loading"></meal-recipes-loading>
-    </span>
+    </v-flex>
 </template>
 
 <script>

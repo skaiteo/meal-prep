@@ -1,9 +1,9 @@
 <template>
-    <span>
+    <v-flex fill-height>
         <home-hero></home-hero>
         <home-details></home-details>
         <home-plans></home-plans>
-    </span>
+    </v-flex>
 </template>
 
 <script>

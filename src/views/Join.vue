@@ -10,14 +10,6 @@
 
                     <v-card-text>
                         <v-form ref="form" v-model="valid" lazy-validation>
-                            <!-- <v-text-field
-                                prepend-icon="person"
-                                name="username"
-                                label="Username"
-                                v-model="username"
-                                :rules="usernameRules"
-                                required
-                            ></v-text-field> -->
                             <v-text-field
                                 prepend-icon="person"
                                 name="email"
