@@ -74,7 +74,7 @@ export default new Vuex.Store({
             }
         },
 
-        userJoin({ commit }, { email, password }) {
+        userSignUp({ commit }, { email, password }) {
             firebase.auth()
                 .createUserWithEmailAndPassword(email, password)
                 .then(response => {
@@ -124,6 +124,15 @@ export default new Vuex.Store({
                 .ref('users')
                 .child(state.user.uid)
                 .push(payload.recipe.label);
+        },
+
+        removeRecipe({ state, dispatch }, payload) {
+            firebase.database()
+                .ref('users')
+                .child(state.user.uid)
+                .child(payload)
+                .remove();
+            dispatch('getUserRecipes');
         },
 
         getUserRecipes({ state, commit }) {
