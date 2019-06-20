@@ -19,7 +19,7 @@
                         </ul>
                     </v-card-text>
                     <v-card-actions>
-                        <v-btn dark block color="green" @click="orderRecipe(item)">Order</v-btn>
+                        <v-btn dark block color="secondary" @click="orderRecipe(item)">Order</v-btn>
                     </v-card-actions>
                 </v-card>
             </v-flex>
