@@ -5,7 +5,7 @@
                 <v-card class="elevation-12">
 
                     <v-toolbar dark color="brown darken-2">
-                        <v-toolbar-title>Join Form</v-toolbar-title>
+                        <v-toolbar-title>Sign Up Form</v-toolbar-title>
                     </v-toolbar>
 
                     <v-card-text>
@@ -34,7 +34,7 @@
 
                     <v-card-actions>
                         <v-spacer></v-spacer>
-                        <v-btn dark color="brown darken-1" :disabled="!valid" @click="submit">Join</v-btn>
+                        <v-btn dark color="brown darken-1" :disabled="!valid" @click="submit">Sign Up</v-btn>
                     </v-card-actions>
                     
                 </v-card>
@@ -45,7 +45,7 @@
 
 <script>
 export default {
-    name: 'Join',
+    name: 'SignUp',
     data() {
         return {
             valid: false,
@@ -76,7 +76,7 @@ export default {
     methods: {
         submit() {
             if (this.$refs.form.validate()) {
-                this.$store.dispatch('userJoin', {
+                this.$store.dispatch('userSignUp', {
                     email: this.email,
                     password: this.password
                 })
