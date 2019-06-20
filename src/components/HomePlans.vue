@@ -116,6 +116,10 @@ export default {
     methods: {
         showRecipes(plan) {
             this.$store.commit('setPlan', plan);
+            this.$vuetify.goTo(document.body.scrollHeight, {
+                easing: 'easeInOutCubic',
+                duration: 200
+            });
             this.$store.dispatch('getRecipes', plan);
         }
     }

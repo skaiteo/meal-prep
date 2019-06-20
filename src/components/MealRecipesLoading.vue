@@ -1,5 +1,5 @@
 <template>
-    <v-container grid-list-lg>
+    <v-container grid-list-lg id="meal-loading">
         <v-layout column>
             <div xs12 class="headline font-weight-bold my-5">
                 Available Recipes for {{ $store.state.plan | capitalize }}
@@ -11,7 +11,7 @@
                     <div class="dot"></div>
                 </div>
             </v-layout>
-            <div class="mt-2 text-xs-center grey--text text--darken-2 subheading font-weight-bold">Loading</div>
+            <div class="mt-2 mb-5 text-xs-center grey--text text--darken-2 subheading font-weight-bold">Loading</div>
         </v-layout>
     </v-container>
 </template>
