@@ -1,13 +1,12 @@
 <template>
-    <!-- <v-container fluid>
-        <v-layout>
-            <h1>Menu Page</h1>
-        </v-layout>
-    </v-container> -->
     <v-flex fill-height>
         <home-plans></home-plans>
-        <meal-recipes v-if="this.$store.state.recipes.length"></meal-recipes>
+        <meal-recipes v-if="this.$store.state.recipes.length" @recipe-added="snackbar = true"></meal-recipes>
         <meal-recipes-loading v-else-if="this.$store.state.loading"></meal-recipes-loading>
+        <v-snackbar v-model="snackbar" :timeout="3000" bottom right>
+            {{ 'Recipe added' }}
+        </v-snackbar>
+        <!-- <meal-recipes-loading></meal-recipes-loading> -->
     </v-flex>
 </template>
 
@@ -19,6 +18,12 @@ import store from '@/store';
 
 export default {
     name: 'Menu',
+
+    data() {
+        return {
+            snackbar: false
+        }
+    },
     
     components: {
         HomePlans,
@@ -29,7 +34,13 @@ export default {
     beforeRouteEnter (to, from, next) {
         store.commit('clearRecipes');
         next();
-    }
+    },
+
+    // computed: {
+    //     snackbar() {
+    //         return this.$store.state.menuSnackbar;
+    //     }
+    // },
 }
 </script>
 

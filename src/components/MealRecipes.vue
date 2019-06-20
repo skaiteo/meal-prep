@@ -48,6 +48,7 @@ export default {
         orderRecipe(item) {
             if (this.isAuthenticated) {
                 this.$store.dispatch('addRecipe', item);
+                this.$emit('recipe-added');
             } else {
                 this.$router.push('/login');
             }
